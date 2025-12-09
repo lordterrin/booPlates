@@ -1,0 +1,130 @@
+
+
+:root {
+  --rep-text: #cd3636;
+  --dem-text: #365bcd;
+  --rep-bg: #702727;
+  --dem-bg: #273971;
+  
+  --primary-font-family: Lato, Nunito, Barlow, "News Cycle", Antonio;
+  --secondary-font-family: 'Inter', sans-serif;
+  --basic-card-color1: #eff6ff;
+  --basic-card-color2: #ffffff;
+  
+  --background-base: #1e1e23;
+
+  --nav-background: #191919;
+  --nav-height: 80px;
+  --nav-color: white;
+
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    /* min-height: 100vh; */
+}
+
+header {
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: var(--nav-background);
+}
+
+nav {
+    display: flex;
+    height: var(--nav-height);
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    /* border-bottom: 9px solid #342e31; */
+}
+
+.header-left {
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;  
+}
+
+header img {
+  max-height: 77%;
+  height: auto;
+  width: auto;
+}
+
+header svg {
+  height: 30px;
+  width: 30px;
+  stroke: white;
+}
+
+/* footer */
+.footer-bottom {
+  background-color: #023150;
+  padding-top: 35px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+.footer-bottom-items {
+  display: flex;
+  max-width: 80vw;
+  margin: 0 auto;
+  flex-direction: column;
+  font-family: Barlow;
+}
+.footer-bottom-items .item {
+  flex: 1;
+}
+.footer-bottom-items p {
+  color: white;
+  margin: 0 0 .6875em;
+  padding: 0.2em;
+  font-size: 0.9em;
+  line-height: 1.4em;
+}
+h1 {
+  text-transform: uppercase;
+  color: #fec40e;
+  font-size: 1.5em;
+  line-height: .88;
+  font-family: Antonio;
+  font-weight: 700;
+}
+
+
+/* main body */
+main {
+  min-height: calc(100vh - var(--nav-height));
+  background: black;
+  display: flex;
+}
+section.sidebar {
+  width: 15vw;
+  background: var(--background-base);
+  margin: 7px;
+  border-radius: 7px;
+}
+section.main {
+  width: 85vw;
+  background: var(--background-base);
+  margin: 7px;
+  border-radius: 7px;
+}
+#big-map {
+
+}
+#big-map svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
