@@ -1,3 +1,1 @@
-<section class="sidebar">
-<h1>Overview</h1>
-</section>
+<h1>How to booPlate</h1>

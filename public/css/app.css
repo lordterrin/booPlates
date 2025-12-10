@@ -109,13 +109,15 @@ main {
   display: flex;
 }
 section.sidebar {
-  width: 15vw;
+  width: 20vw;
   background: var(--background-base);
   margin: 7px;
   border-radius: 7px;
+  display: flex;
+  justify-content: center;
 }
 section.main {
-  width: 85vw;
+  width: 80vw;
   background: var(--background-base);
   margin: 7px;
   border-radius: 7px;
@@ -127,4 +129,25 @@ section.main {
   width: 100%;
   height: auto;
   display: block;
+}
+
+#big-map text[id$="_label"],
+#big-map text[id$="_label"] tspan {
+  font-family: "Barlow", system-ui, sans-serif;
+  font-size: 11px;
+  fill: #111;
+  font-weight: 500;
+}
+#big-map .outer-state {
+  fill: white !important;
+}
+
+#big-map g {
+  cursor: pointer;
+  transition: transform 150ms ease, opacity 150ms ease;
+  transform-origin: center;
+}
+#big-map g:hover {
+    transform: scale(1.15);
+    opacity: 0.95; /* optional for a subtle effect */
 }
