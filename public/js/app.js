@@ -156,12 +156,12 @@ if ( states ) {
 const logoutButton = document.querySelector('#user-profile-button');
 if ( logoutButton ) {
     logoutButton.addEventListener('click', (e) => {
-        window.location.assign('/logout');
+        window.location.assign('logout');
     });
 }
 const logoButton = document.getElementById('header-logo');
 if ( logoButton ) {
     logoButton.addEventListener('click', (e) => {
-        window.location.assign('/');
+        window.location.assign('');
     })
 }
