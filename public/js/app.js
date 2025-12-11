@@ -56,9 +56,9 @@ function checkState(id) {
             /* There is no photo on file for this state.  Allow the user to upload one */
             
             if ( isMobileLayout ) { // mobile layout redirects to a separate page for upload
-                window.location.assign(`/state/${stateCode}/submit`);
+                window.location.assign(`state/${stateCode}/submit`);
             } else { // desktop layout utilizes a modal window
-                window.location.assign(`/state/${stateCode}/submit`);                
+                window.location.assign(`state/${stateCode}/submit`);                
                 ShowStateUploadModal(stateCode);
             }
         }
