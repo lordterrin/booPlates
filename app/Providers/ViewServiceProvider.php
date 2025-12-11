@@ -48,7 +48,7 @@ class ViewServiceProvider extends ServiceProvider
             ];
 
             $title = 'noob';
-            $level = 1;
+            $level = 0;
             foreach ($userTitles as $threshold => $label) {
                 if ($userStatesCount >= $threshold) {
                     $level++;

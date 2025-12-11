@@ -192,7 +192,7 @@ section.main {
   transition: all 300ms;
 }
 #big-map g:hover {    
-  opacity: 0.95;
+  opacity: 0.85;
   transition: all 300ms;
 }
 #big-map path {
