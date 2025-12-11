@@ -1,11 +1,25 @@
 <header>
     <nav>
-        <div class="header-left"><img src="{{ asset('img/logo-small3.png') }}"></div>
+        
+        <div class="header-left">
+            <img src="{{ asset('img/logo-small3.png') }}">
+        </div>
         <div class="header-center"></div>
         <div class="header-right">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
+            @guest            
+            <a href="{{ route('google.redirect') }}" class="google-login-button">
+                <img class="" src="{{ asset('img/google-color.svg') }}" loading="lazy" alt="google logo">
+                <span>Continue with Google</span>
+            </a>
+            @endguest
+            
+            @auth            
+            Hey, {{auth()->user()->firstName}}!
+            <div class="image-holder">
+                <img src="{{ auth()->user()->avatar }}">
+            </div>
+            @endauth
+            
         </div>
     </nav>
 </header>

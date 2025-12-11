@@ -30,7 +30,10 @@ body {
     flex-direction: column;
     /* min-height: 100vh; */
 }
-
+.hidden {
+  display: none;
+  opacity: 0;
+}
 header {
     height: var(--nav-height);
     display: flex;
@@ -114,8 +117,27 @@ section.sidebar {
   margin: 7px;
   border-radius: 7px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  padding-left: 15px;
 }
+section.sidebar ol {
+  padding-right: 30px;
+}
+section.sidebar li {
+  color: white;
+  margin-bottom: 15px;
+}
+section.sidebar p {  
+  color: #0e93fe;
+  font-size: 2.5em;
+  line-height: .88;
+  font-family: Antonio;
+  font-weight: 700;
+  padding-left: 26px;
+  margin-top: 13px;
+}
+
+
 section.main {
   width: 80vw;
   background: var(--background-base);
@@ -130,6 +152,12 @@ section.main {
   height: auto;
   display: block;
 }
+#big-map .map-state {
+  
+}
+#big-map .statePositive {
+  fill: rgb(209 196 31) !important;
+}
 
 #big-map text[id$="_label"],
 #big-map text[id$="_label"] tspan {
@@ -143,11 +171,153 @@ section.main {
 }
 
 #big-map g {
-  cursor: pointer;
-  transition: transform 150ms ease, opacity 150ms ease;
-  transform-origin: center;
+  cursor: pointer;  
+  transition: all 300ms;
 }
-#big-map g:hover {
-    transform: scale(1.15);
-    opacity: 0.95; /* optional for a subtle effect */
+#big-map g:hover {    
+  opacity: 0.95;
+  transition: all 300ms;
+}
+#big-map path {
+  stroke-width: 0.5px !important;
+  shape-rendering: geometricPrecision !important;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 2;
+  vector-effect: none;
+}
+
+/* header --> google login */
+.header-right {
+  color: white;
+  font-family: 'Atma';
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+.header-right a {
+  border: 1px solid #917f7f;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+}
+.header-right .image-holder {
+    display: flex;
+    margin-left: 15px;
+}
+.header-right img {
+  max-height: 40px;
+  border-radius: 9999px;
+  border: 2px solid black;
+}
+.header-right span {  
+  padding-left: 15px;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.25px;
+  padding: 10px 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
+
+
+
+
+/* state submission page */
+section.state-submit {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+section.state-submit .state-logo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+section.state-submit .back-button-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  left: 30px;  
+}
+section.state-submit .back-button-wrapper .back-button {
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+}
+section.state-submit .back-button-wrapper span {
+  font-size: 0.8em;
+  padding-left: 4px;
+  color: #d1caca;
+}
+section.state-submit .state-logo h1 {
+  font-size: 6.5em;
+  margin-bottom: 15px;
+}
+section.state-submit .state-logo p {
+  font-family: 'Atma';
+  font-size: 1.5em;
+}
+section.state-submit .state-image {
+  flex: 1;
+  min-height: 0; /* important in flex layouts */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* optional, to hide any tiny overflow */
+}
+section.state-submit .state-image img {
+  border-radius: 15px;
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  display: block;
+}
+.no-photo {
+  opacity: 0.15;
+}
+section.state-submit .state-upload {
+  flex: 1;
+  margin-top: 25px;
+}
+
+#dropzone {
+  
+}
+.state-upload .drop-area {
+    border: 2px dashed #ccc;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.state-upload .drop-area.dragover {
+    border-color: #4a90e2;
+    background: #f0f8ff;
+}
+.state-upload .submit-button {
+  display: none;
+  opacity: 0;
+}
+.state-upload span#upload-link {
+  color: #e016a8;
+  font-weight: 400;
 }

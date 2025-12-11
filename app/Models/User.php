@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'google_id',
+        'avatar',
     ];
 
     /**
@@ -42,4 +44,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function getFirstNameAttribute()
+    {
+        // Google returns a full name to us.  Laravel allows accessors like this to be added into a model's object
+        if (! $this->name) {
+            return '';
+        }
+
+        return explode(' ', trim($this->name))[0];
+    }
+
+    public function states()
+    {
+        return $this->hasMany(State::class);
+    }
+
 }

@@ -1,66 +1,84 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# booPlates
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+booPlates is a compact but feature-rich Laravel project built to showcase practical full-stack development skills.  
+It demonstrates modern PHP backend design, Blade templating, authentication, image uploads, dynamic UI rendering, and responsive front-end behavior.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Features Demonstrated
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### **Laravel Framework**
+- Controllers for page rendering, form handling, and route logic  
+- Eloquent Models with mass-assignment protection, custom queries, and relational structure  
+- Blade templating with layouts, partials, and dynamic content injection  
+- Custom `ViewServiceProvider` with view composers to supply global layout data  
+- Named routes, dynamic route parameters, and route constraints  
+- Authentication usage (`auth()->id()`) and user-scoped data  
+- Server-side file uploads with validation and storage management  
+- Database design with lookup tables, foreign keys, and unique constraints  
+- Use of `php artisan` commands for models, controllers, migrations, and providers  
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🗄️ Database & Data Flow
+- Lookup table (`state_names`) for static state metadata (name, code, moniker)  
+- User upload table (`states`) linking users to images via foreign keys  
+- Distinct state tracking to limit one upload per user per state  
+- Automatic file replacement when users re-upload images  
+- Computation of user progress (uploaded state count vs total states)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🌐 Frontend Development (JavaScript + CSS)
+### JavaScript (ES6)
+- DOM manipulation via `querySelector`, `for…of`, and classList API  
+- Event-driven UI for file selection, drag-and-drop, and auto-upload  
+- Client-side image previews using `FileReader`  
+- SVG manipulation for interactive map highlighting  
+- Passing PHP data into JS using `@json()`  
+- Device detection via `matchMedia` for mobile vs desktop behavior  
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### CSS / Layout
+- Responsive flexbox layout for main content and sidebar  
+- Mobile-first design adjustments  
+- SVG styling and state-coloring logic  
+- Polished drag-and-drop upload box  
+- Utility classes for dynamic state highlighting  
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 📱 Mobile vs Desktop Behavior
+- Conditional UI flows based on device width  
+- Client-side redirects for mobile upload workflow  
+- Differing visual layouts for map interactions and upload screens  
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## 🔐 OAuth & External Services
+- Google OAuth login flow  
+- Handling of tokens, sessions, and secure redirects  
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🧰 Development Tools & Commands
+- Extensive use of `php artisan`:
+  - `make:model`
+  - `make:controller`
+  - `make:migration`
+  - `make:provider`
+- `storage:link` for serving uploaded files  
+- Organized project structure following modern Laravel conventions  
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 🧠 Additional Engineering Concepts
+- Custom helper logic (user rank system based on uploads)  
+- DRY principles with shared providers instead of duplicated controller logic  
+- Strict validation for file size and image type  
+- Safe deletion of old uploads upon overrides  
+- Passing shared sidebar data without controller repetition  
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+booPlates is intentionally small in scope but wide in surface area.  
+It shows competence not just in Laravel as a framework, but in the entire ecosystem of modern full-stack development: backend design, UI logic, interactive JavaScript, mobile optimization, authentication flows, and database modeling.
