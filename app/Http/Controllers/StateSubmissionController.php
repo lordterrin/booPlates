@@ -45,7 +45,8 @@ class StateSubmissionController extends Controller
             Storage::disk('public')->delete($existing->img_location);
         }
 
-        $path = $request->file('photo')->store("states/{$code}", 'public');
+        $path = $request->file('photo')->store($code, 'state_images');
+
 
         /* create the database record for this */        
         State::updateOrCreate(

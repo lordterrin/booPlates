@@ -56,6 +56,14 @@ return [
             'throw' => false,
         ],
 
+        'state_images' => [
+            'driver' => 'local',            
+            'root'   => storage_path('app/public/states'),            
+            'url'    => env('APP_URL') . '/state-images/states',
+            'visibility' => 'public',
+        ],
+
+
     ],
 
     /*
