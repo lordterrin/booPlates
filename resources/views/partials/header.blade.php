@@ -16,7 +16,7 @@
             @auth            
             Hey, {{auth()->user()->firstName}}!
             <div class="image-holder">
-                <img src="{{ auth()->user()->avatar }}">
+                <img id="user-profile-button" src="{{ auth()->user()->avatar }}">
             </div>
             @endauth
             

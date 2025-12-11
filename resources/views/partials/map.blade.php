@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="map" version="1.1" viewBox="0 0 1000 700" preserveAspectRatio="xMinYMin" data-originalStrokeWidth=".55" data-right-clicked-id="CA" class="">
+<svg xmlns="http://www.w3.org/2000/svg" id="map" version="1.1" viewBox="0 0 900 600" preserveAspectRatio="xMidYMid meet" data-originalStrokeWidth=".55" data-right-clicked-id="CA" class="">
   <defs>
     <pattern id="circles3" width="10" height="10" patternUnits="userSpaceOnUse">
       <rect width="10" height="10" fill="#fff"></rect>

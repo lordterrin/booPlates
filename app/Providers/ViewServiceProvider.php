@@ -35,7 +35,7 @@ class ViewServiceProvider extends ServiceProvider
             
             $userTitles = [
                 50 => "s-tier goated six-seven",
-                45 => "slaaaay queen",
+                45 => "a slaaaay queen",
                 40 => "almost as cool as a millenial",
                 35 => "you're giving fire",
                 30 => "ok bet",
@@ -48,8 +48,10 @@ class ViewServiceProvider extends ServiceProvider
             ];
 
             $title = 'noob';
+            $level = 1;
             foreach ($userTitles as $threshold => $label) {
                 if ($userStatesCount >= $threshold) {
+                    $level++;
                     $title = $label;
                     break;
                 }
@@ -60,6 +62,7 @@ class ViewServiceProvider extends ServiceProvider
                 'userStatesCount' => $userStatesCount,
                 'totalStates'     => $totalStates,
                 'title'           => $title,
+                'level'           => $level,
             ]);
         });
     }

@@ -1,5 +1,14 @@
 console.log('hello');
 
+let API_BASE;
+if (window.APP_ENV == 'production') {
+    API_BASE = '/booPlates/api';
+} else {
+    API_BASE = '/api';
+}
+
+console.log(API_BASE);
+
 const mobileLayout = window.matchMedia('(max-width: 768px)');
 let isMobileLayout = mobileLayout.matches;
 
@@ -28,7 +37,7 @@ if ( svg ) {
 
 function checkState(id) {
 
-    const url = '/api/checkState';
+    const url = `${API_BASE}/checkState`;
     fetch(url, {
         method: 'POST',
         headers: {'Content-type':'application/json'},
@@ -140,4 +149,13 @@ if ( states ) {
         }
     }
 
+}
+
+
+/* header */
+const logoutButton = document.querySelector('#user-profile-button');
+if ( logoutButton ) {
+    logoutButton.addEventListener('click', (e) => {
+        window.location.assign('/logout');
+    });
 }

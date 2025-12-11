@@ -7,11 +7,17 @@
     </ol>
 </div>
 <div class="sidebar-mid">
+    
+    @auth
     <h1>booStats</h1>
     <p> {{ $userStatesCount }} / {{ $totalStates }} </p>
+    @endauth
 
 </div>
 <div class="sidebar-bot">
-<h1>You are</h1>
-<p>{{ $title }}</p>
+    @auth
+    <h1>You are</h1>
+    <h2>Level {{ $level }}:</h2>
+    <p>{{ $title }}</p>
+    @endauth
 </div>    
