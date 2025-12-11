@@ -20,7 +20,12 @@ use App\Http\Controllers\StateSubmissionController;
 //     return view('welcome');
 // });
 
-Route::get('/', [HomeController::class, 'LoadHome']);
+Route::match(['GET', 'HEAD'], '/', [HomeController::class, 'LoadHome'])->name('home');
+
+/* Laravel looks for /login to handle login - we're bypassing that and JUST using google oAuth. */
+Route::get('/login', function () {
+    return redirect('/auth/google/redirect');
+})->name('login');
 
 
 /* google oAuth */
@@ -41,10 +46,12 @@ Route::get('/logout', [GoogleAuthController::class, 'logout'])
 //create a name as well so we can this in a blade instead of hardcoding the URI 
 Route::get('/state/{code}/submit', [StateSubmissionController::class, 'create'])
     ->where(['code' => '[A-Z]{2}'])
-    ->name('state.submit');
+    ->name('state.submit')
+    ->middleware('auth');
 
 //Post data from the user about a particular state
 Route::post('/state/{code}/submit', [StateSubmissionController::class, 'store'])
     ->where(['code' => '[A-Z]{2}'])
-    ->name('state.submit.store');
+    ->name('state.submit.store')
+    ->middleware('auth');
 

@@ -159,3 +159,9 @@ if ( logoutButton ) {
         window.location.assign('/logout');
     });
 }
+const logoButton = document.getElementById('header-logo');
+if ( logoButton ) {
+    logoButton.addEventListener('click', (e) => {
+        window.location.assign('/');
+    })
+}

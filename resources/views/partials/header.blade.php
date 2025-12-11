@@ -2,7 +2,7 @@
     <nav>
         
         <div class="header-left">
-            <img src="{{ asset('img/logo-small3.png') }}">
+            <img id="header-logo" src="{{ asset('img/logo-small3.png') }}">
         </div>
         <div class="header-center"></div>
         <div class="header-right">
