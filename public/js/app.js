@@ -85,7 +85,7 @@ const fileInput = document.getElementById('state-upload-file-input');
 
 if ( backButton ) {
     backButton.addEventListener('click', (e) => {
-        window.location.assign('/');
+        window.location.assign('');
     });
 }
 
