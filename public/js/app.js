@@ -1,8 +1,9 @@
 console.log('hello');
 
 let API_BASE;
+let BASE_URL;
 if (window.APP_ENV == 'production') {
-    API_BASE = '/booPlates/api';
+    API_BASE = '/booPlates/api';    
 } else {
     API_BASE = '/api';
 }
@@ -85,7 +86,7 @@ const fileInput = document.getElementById('state-upload-file-input');
 
 if ( backButton ) {
     backButton.addEventListener('click', (e) => {
-        window.location.assign('');
+        window.location.assign(window.BASE_URL);
     });
 }
 
@@ -162,6 +163,6 @@ if ( logoutButton ) {
 const logoButton = document.getElementById('header-logo');
 if ( logoButton ) {
     logoButton.addEventListener('click', (e) => {
-        window.location.assign('');
+        window.location.assign(window.BASE_URL);
     })
 }

@@ -15,6 +15,7 @@
 
     <script>
         window.APP_ENV = "{{ app()->environment() }}";
+        window.BASE_URL = "{{ url('/') }}";
     </script>
 </head>
 <body>
