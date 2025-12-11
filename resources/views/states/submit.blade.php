@@ -18,8 +18,8 @@
         </div>
 
         <div class="state-image">
-            @if ($image !== '')
-                <img src="{{ asset('storage/' . $image) }}">
+            @if ($image !== '')                
+                <img src="{{ Storage::disk('state_images')->url($image) }}">
             @else 
                 <img class="no-photo" src="{{ asset('img/placeholder.svg') }}">
             @endif
