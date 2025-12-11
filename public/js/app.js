@@ -166,3 +166,67 @@ if ( logoButton ) {
         window.location.assign(window.BASE_URL);
     })
 }
+
+/* level 7 */
+const levelCallout = document.getElementById('level-callout');
+if ( levelCallout ) {
+    levelCallout.addEventListener('click', (e) => {
+        if ( levelCallout.innerHTML == 'Level 7:' ) {
+            launchGifAcrossScreen('img/giphy.gif');
+        }
+    });
+}
+function launchGifAcrossScreen(gifUrl) {
+    // Create the image element
+    const img = document.createElement('img');
+    img.src = gifUrl;
+    img.style.position = 'fixed';
+    img.style.left = '0px';
+    img.style.bottom = '0px';
+    img.style.width = '250px';         // adjust size as you want
+    img.style.pointerEvents = 'none';  // don't block user clicks
+    img.style.zIndex = 999999;
+
+    document.body.appendChild(img);
+
+    // Starting position (bottom-left)
+    let x = 0;
+    let y = 0;
+
+    // Target end position (top-right)
+    const endX = window.innerWidth - 150;
+    const endY = window.innerHeight - 150;
+
+    // Animation timing
+    const duration = 4000; // ms
+    const startTime = performance.now();
+
+    function animate(now) {
+        const progress = (now - startTime) / duration;
+
+        if (progress >= 1) {
+            // End the animation
+            img.remove();
+            return;
+        }
+
+        // Base linear movement
+        let newX = x + (endX - x) * progress;
+        let newY = y + (endY - y) * progress;
+
+        // Add randomness for erratic motion
+        const erraticStrength = 10; // tweak this
+        newX += (Math.random() - 0.5) * erraticStrength;
+        newY += (Math.random() - 0.5) * erraticStrength;
+
+        // Apply bounds so it never goes off-screen
+        newX = Math.max(0, Math.min(newX, endX));
+        newY = Math.max(0, Math.min(newY, endY));
+
+        img.style.transform = `translate(${newX}px, -${newY}px)`;
+
+        requestAnimationFrame(animate);
+    }
+
+    requestAnimationFrame(animate);
+}

@@ -147,6 +147,9 @@ section.sidebar p {
   padding-left: 26px;
   margin-top: 13px;
 }
+section.sidebar #level-callout {
+  cursor: pointer;
+}
 
 
 section.main {

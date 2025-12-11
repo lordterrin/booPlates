@@ -4,6 +4,8 @@
         <li>Take a photo of a license plate from any state</li>
         <li>Click on that state</li>
         <li>Upload the photo!</li>
+        <li>???</li>
+        <li>Profit!</li>
     </ol>
 </div>
 <div class="sidebar-mid">
@@ -17,7 +19,7 @@
 <div class="sidebar-bot">
     @auth
     <h1>You are</h1>
-    <h2>Level {{ $level }}:</h2>
+    <h2 id="level-callout">Level {{ $level }}:</h2>
     <p>{{ $title }}</p>
     @endauth
 </div>    
