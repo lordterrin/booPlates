@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\StateSubmissionController;
+use App\Http\Controllers\BooBoardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,43 +57,4 @@ Route::post('/state/{code}/submit', [StateSubmissionController::class, 'store'])
     ->middleware('auth');
 
 
-
-Route::get('/migrate-state-images', function () {
-
-    $oldPath = storage_path('app/public/states');
-    $newPath = public_path('state-images/states');
-
-    if (!is_dir($oldPath)) {
-        return "Old directory not found.";
-    }
-
-    // Ensure new directory exists
-    if (!is_dir($newPath)) {
-        mkdir($newPath, 0775, true);
-    }
-
-    $iterator = new RecursiveIteratorIterator(
-        new RecursiveDirectoryIterator($oldPath, RecursiveDirectoryIterator::SKIP_DOTS),
-        RecursiveIteratorIterator::SELF_FIRST
-    );
-
-    foreach ($iterator as $file) {
-        if ($file->isFile()) {
-            $oldFile = $file->getPathname();
-
-            // preserve the states/TX structure
-            $relative = str_replace($oldPath, '', $oldFile);  
-            $target = $newPath . $relative;
-
-            $targetDir = dirname($target);
-            if (!is_dir($targetDir)) {
-                mkdir($targetDir, 0775, true);
-            }
-
-            // Copy file — PHP-created files become owned by web:web automatically
-            copy($oldFile, $target);
-        }
-    }
-
-    return "Migration complete.";
-});
+Route::get('/booBoards', [BooBoardController::class, 'display']);

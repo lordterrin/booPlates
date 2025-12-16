@@ -34,28 +34,64 @@ class ViewServiceProvider extends ServiceProvider
             $totalStates = StateName::count();
             
             $userTitles = [
-                50 => "s-tier goated six-seven",
-                45 => "a slaaaay queen",
-                40 => "almost as cool as a millenial",
-                35 => "you're giving fire",
-                30 => "ok bet",
-                25 => "generating that rizz",
-                20 => "kinda mid",
-                15 => "low-key ohio",
-                10 => "casual",
-                5  => "baby bronze",
-                0  => "a noob",
+                50 => [
+                    'level' => 11,
+                    'title' => 's-tier goated six-seven',
+                ],
+                45 => [
+                    'level' => 10,
+                    'title' => 'a slaaaay queen',
+                ],
+                40 => [
+                    'level' => 9,
+                    'title' => 'almost as cool as a millennial',
+                ],
+                35 => [
+                    'level' => 8,
+                    'title' => "you're giving fire",
+                ],
+                30 => [
+                    'level' => 7,
+                    'title' => 'ok bet',
+                ],
+                25 => [
+                    'level' => 6,
+                    'title' => 'generating that rizz',
+                ],
+                20 => [
+                    'level' => 5,
+                    'title' => 'kinda mid',
+                ],
+                15 => [
+                    'level' => 4,
+                    'title' => 'low-key ohio',
+                ],
+                10 => [
+                    'level' => 3,
+                    'title' => 'casual',
+                ],
+                5 => [
+                    'level' => 2,
+                    'title' => 'baby bronze',
+                ],
+                0 => [
+                    'level' => 1,
+                    'title' => 'a noob',
+                ],
             ];
+
 
             $title = 'noob';
             $level = 0;
-            foreach ($userTitles as $threshold => $label) {
+            foreach ($userTitles as $threshold => $data) {
                 if ($userStatesCount >= $threshold) {
-                    $level++;
-                    $title = $label;
+                                        
+                    $level = $data['level'];
+                    $title = $data['title'];
                     break;
                 }
             }
+            
 
             $view->with([
                 'userStates'      => $userStates,

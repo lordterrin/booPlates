@@ -19,6 +19,14 @@
 
 }
 
+.test {
+  font-family: 'Inter';
+  font-family: 'Barlow';
+  font-family: 'Antonio';
+  font-family: 'Atma';
+  font-family: 'Roboto';
+}
+
 html, body {
     height: 100%;
     margin: 0;
@@ -216,7 +224,7 @@ section.main {
   font-size: 1.3rem;
   font-weight: 300;
 }
-.header-right a {
+.header-right .google-login-button {
   border: 1px solid #917f7f;
   height: 20px;
   display: flex;
@@ -226,12 +234,15 @@ section.main {
   text-decoration: none;
   color: white;
 }
+.header-right .google-login-button img {
+  height: 38px;
+}
 .header-right .image-holder {
     display: flex;
     margin-left: 15px;
 }
 .header-right img {
-  max-height: 40px;
+  max-height: 48px;
   border-radius: 9999px;
   border: 2px solid black;
 }
@@ -247,8 +258,17 @@ section.main {
   align-items: center;
   column-gap: 12px;
 }
-
-
+.header-right .header-link a {
+  font-family: 'Barlow';
+  padding-right: 56px;
+  font-size: 0.8em;
+  font-weight: 600;
+  position: relative;
+  top: 1px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
 
 
 /* state submission page */
@@ -341,4 +361,18 @@ section.state-submit .state-upload {
 .state-upload span#upload-link {
   color: #e016a8;
   font-weight: 400;
+}
+
+
+
+
+/* leaderboards/booBoards */
+.booBoard {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 85%;
+  max-height: 95%;
+  overflow: auto;
+  margin-top: 25px;
 }

@@ -7,6 +7,9 @@
 
     <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
 
+    <!-- grid.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridjs/6.2.0/theme/mermaid.css" integrity="sha512-ibnRpUIPxMVyH/FKCXkBogJLSLNPbf+R6OStxW0LZCixqgbuAneGeTPuvtqi9rqSEoALv3T1Gu4aH4NYNUjvsg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Global CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,10 +40,15 @@
         @include('partials.footer')
     </footer>
 
-    <!-- Global JS (optional) -->
+    <!--- grid.js -->
+    <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Global JS -->    
     <script src="{{ asset('js/app.js') }}"></script>
 
-    <!-- Page-specific JS pushed from child views -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridjs/6.2.0/theme/mermaid.css" integrity="sha512-ibnRpUIPxMVyH/FKCXkBogJLSLNPbf+R6OStxW0LZCixqgbuAneGeTPuvtqi9rqSEoALv3T1Gu4aH4NYNUjvsg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Page-specific JS pushed from child views, loaded with @push('scripts') in a given blade -->
     @stack('scripts')
 </body>
 </html>

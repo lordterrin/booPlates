@@ -78,6 +78,21 @@ It demonstrates modern PHP backend design, Blade templating, authentication, ima
 - Safe deletion of old uploads upon overrides  
 - Passing shared sidebar data without controller repetition  
 
+
+
+## API Layer
+
+- Stable URLs
+- Predictable request and response formats
+- Versioning
+- Error contracts
+- Authentication strategy
+- Access rules
+- Rate limits
+- Input validation
+- Schema compatibility over time
+
+
 ---
 
 booPlates is intentionally small in scope but wide in surface area.  

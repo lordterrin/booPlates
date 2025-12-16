@@ -15,7 +15,7 @@ class StateSubmissionController extends Controller
     public function create(Request $request) {
         $code = strtoupper($request->route('code'));
         $state = StateName::where('code', $code)->first();
-        $image = State::where('state_code', $code)->first();
+        $image = State::where('state_code', $code)->where('user_id', auth()->id())->first();
         
         
         return view('states.submit', [
