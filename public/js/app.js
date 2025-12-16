@@ -5,8 +5,10 @@ let API_BASE;
 let BASE_URL;
 if (window.APP_ENV == 'production') {
     API_BASE = '/booPlates/api';    
+    BASE_URL = '/booPlates/';
 } else {
     API_BASE = '/api';
+    BASE_URL = '/';
 }
 
 console.log(API_BASE);

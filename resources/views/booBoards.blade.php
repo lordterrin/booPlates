@@ -15,7 +15,7 @@
 
     const nameLink = (cell, row) => {
         const id = row.cells[0].data; // because id is the first column, even if it's hidden
-        return gridjs.html(`<a href="/?id=${id}">${cell}</a>`);
+        return gridjs.html(`<a href="${BASE_URL}?id=${id}">${cell}</a>`);
     };
   
     document.addEventListener('DOMContentLoaded', () => {
