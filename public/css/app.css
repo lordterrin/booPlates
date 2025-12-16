@@ -167,6 +167,7 @@ section.main {
   border-radius: 7px;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 #big-map {
   flex: 1;             /* fill available width */
@@ -375,4 +376,23 @@ section.state-submit .state-upload {
   max-height: 95%;
   overflow: auto;
   margin-top: 25px;
+}
+section.main .guest-container {
+  width: 100%;
+}
+.guest-container #big-map .statePositive {
+    fill: rgb(212 125 125) !important;
+}
+section.main .guest-view {
+  position: absolute;
+  color: #a29696;
+  left: 30px;
+  top: 23px;
+  font-style: italic;
+  font-family: 'Atma';
+}
+.gridjs a {
+  color: #3d71e2;
+  text-decoration: none;
+  font-weight: 600;
 }

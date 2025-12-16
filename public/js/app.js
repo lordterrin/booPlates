@@ -1,5 +1,6 @@
 console.log('hello');
 
+let guestMode = false;
 let API_BASE;
 let BASE_URL;
 if (window.APP_ENV == 'production') {
@@ -37,6 +38,10 @@ if ( svg ) {
 }
 
 function checkState(id) {
+
+    if ( isGuestMode() ) {
+        return false;
+    }
 
     const url = `${API_BASE}/checkState`;
     fetch(url, {
@@ -137,7 +142,15 @@ if (fileInput && form && stateImage) {
     });
 }
 
-
+function isGuestMode() {
+    if (Array.isArray(guestStates) && guestStates.length > 0 ) {
+        guestMode = true;
+        return true;
+    } else {
+        guestMode = false;
+        return false;
+    }
+}
 
 /* main page */
 const states = document.getElementsByClassName('map-state');
@@ -145,7 +158,11 @@ if ( states ) {
 
     for ( s of states ) {
         let id = s.id;
-        if ( userStates.includes(id) ) {
+        if ( isGuestMode() ) {            
+            if ( guestStates.includes(id) ) {
+                s.classList.add('statePositive');
+            }
+        } else if ( userStates.includes(id) ) {            
             s.classList.add('statePositive');
         }
     }

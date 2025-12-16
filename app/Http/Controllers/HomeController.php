@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\State;
 use App\Models\StateName;
+use App\Models\User;
 
 
 class HomeController extends Controller
@@ -38,27 +39,31 @@ class HomeController extends Controller
     }
 
 
-    public function LoadHome() {
-                
-        $message = "sup";
+    public function LoadHome(Request $request) {
 
-        if ( auth()->id() ) {
-            $userId = auth()->id();
-            
-            $userStates = State::where('user_id', $userId)
+        $message = 'Welcome to Costco. I love you.';
+
+        /* A user may load this page having come from booBoards, where they'd be passing over the ID that they're looking to see */
+        $guestId = $request->query('id') ?? '';
+
+        if ( $guestId ) {            
+            $guestStates = State::where('user_id', $guestId)
                 ->distinct()
                 ->pluck('state_code');
 
-            $userStatesCount = $userStates->count();
+            $guestStatesCount = $guestStates->count();
             $totalStates = StateName::count();
 
+            //$guestName = User::select('name')->where('id', $guestId)->first();
+            $guestName = User::where('id', $guestId)->value('name');
         }
         
         return view('home', [
             'message' => $message,
-            // 'userStates' => $userStates ?? [],
-            // 'userStatesCount' => $userStatesCount ?? 0,
-            // 'totalStates' => $totalStates ?? 0,
+            'guestId' => $guestId,
+            'guestStates' => $guestStates ?? [],
+            'guestStatesCount' => $guestStatesCount ?? 0,
+            'guestName' => $guestName ?? '',
             // 'title'         => $this->getUserTitle($userStatesCount) ?? 'Noob'
         ]);
     }
