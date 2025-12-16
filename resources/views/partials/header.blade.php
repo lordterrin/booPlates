@@ -6,9 +6,9 @@
         <div class="header-center"></div>
         <div class="header-right">
         
-            <div class="header-link"><a href="/docs/api">api</a></div>
+            <div class="header-link"><a href="docs/api">api</a></div>
             
-            <div class="header-link"><a href="/booBoards">booBoards</a></div>
+            <div class="header-link"><a href="booBoards">booBoards</a></div>
 
             @guest            
             <a href="{{ route('google.redirect') }}" class="google-login-button">
