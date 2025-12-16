@@ -31,7 +31,7 @@
             search: true,
             pagination: { limit: 25 },
             server: {
-                url: '/api/v1/leaderboard', // whatever endpoint you choose
+                url: 'api/v1/leaderboard', // whatever endpoint you choose
                 then: res => res.data,     // pull data array from your wrapper
             }
             }).render(document.getElementById('booBoard'));

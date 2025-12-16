@@ -6,7 +6,7 @@
         <div class="header-center"></div>
         <div class="header-right">
         
-            <div class="header-link"><a href="docs/api">api</a></div>
+            <div class="header-link"><a href="docs/api/v1">api</a></div>
             
             <div class="header-link"><a href="booBoards">booBoards</a></div>
 
