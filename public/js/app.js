@@ -249,3 +249,33 @@ function launchGifAcrossScreen(gifUrl) {
 
     requestAnimationFrame(animate);
 }
+
+
+/* Mobile */
+const mobileNav = document.querySelector('.mobile-nav');
+const mobileOpen = document.getElementById('mobile-nav-open');
+if ( mobileOpen ) {
+    mobileOpen.addEventListener('click', function() {        
+        let isOpen = mobileNav.classList.contains('nav-open');
+        if ( isOpen ) {
+            //mobileNav.classList.remove('nav-open');
+        } else {
+            mobileNav.classList.add('nav-open');
+        }
+    });
+}
+const mobileClose = document.querySelector('#mobile-nav-close');
+if ( mobileClose ) {    
+    mobileClose.addEventListener('click', function() {
+        console.log('close click');
+        mobileNav.classList.remove('nav-open');
+    });
+}
+const headerToggleWhat = document.getElementById('header-toggle-what');
+if ( headerToggleWhat ) {
+    const headerExpWhat = document.getElementById('header-exp-what');    
+    headerToggleWhat.addEventListener('click', function() {        
+        headerExpWhat.classList.toggle('explanation-open');
+        headerToggleWhat.classList.toggle('chevron-open');
+    });
+}

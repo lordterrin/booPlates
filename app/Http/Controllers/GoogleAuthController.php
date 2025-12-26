@@ -30,7 +30,7 @@ class GoogleAuthController extends Controller
                 'email'     => $googleUser->getEmail(),
                 'google_id' => $googleUser->getId(),
                 'avatar'    => $googleUser->getAvatar(),
-                'password'  => bcrypt(str()->random(32)), // random since you are not using local passwords
+                'password'  => bcrypt(str()->random(32)), // random since we are not using local passwords
             ]);
         } else {
             // keep google_id and avatar in sync
@@ -42,7 +42,7 @@ class GoogleAuthController extends Controller
 
         Auth::login($user, true);
 
-        return redirect()->intended('/');    // or wherever your main app lives
+        return redirect()->intended('/'); 
     }
 
     public function logout(Request $request)
