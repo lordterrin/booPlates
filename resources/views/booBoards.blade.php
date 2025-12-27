@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
     @section('content')
-    <div id="booBoard" class="booBoard"></div>
+    <div class="booBoard-container">
+        <div id="booBoard" class="booBoard"></div>
+    </div>
     @endsection
 
 
@@ -38,8 +40,11 @@
                     },
                 }
             ],
-            sort: true,
-            search: true,
+            sort: true,            
+            search: {
+                enabled: false,
+                placeholder: 'Search...'
+            },
             pagination: { limit: 25 },
             server: {
                 url: 'api/v1/leaderboard', 

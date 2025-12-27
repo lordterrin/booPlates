@@ -73,9 +73,19 @@
                                 </div>
                                 <div id="header-exp-stack" class="header-body-explanation">
                                     <div class="header-explanation">
-                                        booPlates is a Laravel-based web application that visualizes user-generated data across the United States using an interactive SVG map. The homepage presents a full US map where each state can be clicked to load and display state-specific information stored in a database. The application follows a clean, conventional Laravel architecture: Blade views for layout and structure, controllers and API endpoints for data access, Eloquent models for persistence, and lightweight JavaScript for client-side interactivity. The focus is on clarity, performance, and maintainability, with a modern UI and a deliberate separation between backend logic and frontend behavior.
+                                        booPlates is a Laravel-based web application that visualizes user-generated data across the United States using an interactive SVG map. The homepage presents a full US map where each state can be clicked to load and display state-specific information stored in a database. <br>The application follows a clean, conventional Laravel architecture: Blade views for layout and structure, controllers and API endpoints for data access, Eloquent models for persistence, and lightweight JavaScript for client-side interactivity. The focus is on clarity, performance, and maintainability, with a modern UI and a deliberate separation between backend logic and frontend behavior.
                                     </div>
                                 </div>
+                            </div>
+                             <div class="header-body-link">
+                                <a href="booBoards">
+                                    <span>booBoards</span>
+                                    <p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </p>
+                                </a>
                             </div>
                         </div>                        
                         <div class="footer">

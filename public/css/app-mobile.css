@@ -13,6 +13,7 @@
     section.main {
         width: 100%;
         flex-direction: column;
+        justify-content: flex-start;
     }
     main {
         min-height: calc(100vh - ( var(--nav-height) + var(--footer-height) ) );
@@ -75,6 +76,7 @@
         flex-direction: column;
         justify-content: space-between;
         padding: 15px;
+        overflow: auto;
     }
     .mobile-nav .mobile-menu .header {
         display: flex;
@@ -96,6 +98,24 @@
         position: relative;
         top: 5px;
         margin: 10px;
+    }
+    .mobile-nav .header-body-link {
+        margin-top: 25px;
+        border-top: 2px solid grey;
+        padding-top: 25px;
+    }
+    .mobile-nav .header-body-link span {
+        font-size: 1.2em;
+        font-family: 'Atma';
+        font-weight: 500;
+        display: inline;
+    }
+    .mobile-nav .header-body-link p {
+        fill: white;
+        stroke: white;
+        display: inline;
+        position: relative;
+        top: 5px;
     }
     .mobile-nav .mobile-menu .header-body-item {
         display: flex;
@@ -197,6 +217,43 @@
         display: none;
     }
 
+    /* booBoards */
+    .booBoard-container {
+        margin-left: 5px;
+        margin-right: 15px;
+    }
+    .booBoard {
+        width: auto !important;
+    }
+    button.gridjs-sort.gridjs-sort-neutral {
+        opacity: 0 !important;
+    }
+    table.gridjs-table {
+        table-layout: auto !important;
+    }
+    th.gridjs-th {
+        border: none !important;
+        background: none !important;
+        color: white !important;
+        padding: 5px !important;
+        white-space: break-spaces !important;
+    }
+    .gridjs-tbody {
+        background: transparent !important;
+    }
+    td.gridjs-td {
+        background: transparent !important;
+        color: white !important;
+        padding: 12px 6px !important;
+        border: none !important;
+    }
+    .gridjs a {
+        color: #7699e4 !important;
+    }
+    .gridjs-footer {
+        display: none !important;
+    }
 
 
-    _
+}
+
