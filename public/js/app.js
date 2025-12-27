@@ -190,7 +190,15 @@ if ( logoButton ) {
 const levelCallout = document.getElementById('level-callout');
 if ( levelCallout ) {
     levelCallout.addEventListener('click', (e) => {
-        if ( levelCallout.innerHTML == 'Level 7:' ) {
+        if ( levelCallout.innerHTML == 'Level 7:' || levelCallout.innerHTML == 'Level 6:' ) {
+            launchGifAcrossScreen('img/giphy.gif');
+        }
+    });
+}
+const levelCalloutHome = document.getElementById('level-callout-home');
+if ( levelCalloutHome ) {
+    levelCalloutHome.addEventListener('click', (e) => {
+        if ( levelCalloutHome.innerHTML == 'Level 7:' || levelCalloutHome.innerHTML == 'Level 6:' ) {
             launchGifAcrossScreen('img/giphy.gif');
         }
     });

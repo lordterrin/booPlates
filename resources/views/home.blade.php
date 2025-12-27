@@ -18,7 +18,7 @@
         </div>
         <div class="top-stats-right">
             @auth            
-            <h1 id="level-callout">Level {{ $level }}:</h2>
+            <h1 id="level-callout-home">Level {{ $level }}:</h2>
             <p>{{ $title }}</p>
             @endauth
         </div>   
