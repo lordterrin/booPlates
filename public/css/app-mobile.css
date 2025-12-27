@@ -193,6 +193,15 @@
         top: -1px;
         font-size: 0.9em;
     }
+    section.main .guest-container {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
+    section.main .guest-view {
+        left: 51px;
+        top: 33px;
+    }
 
 
 
