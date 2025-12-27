@@ -273,9 +273,28 @@ if ( mobileClose ) {
 }
 const headerToggleWhat = document.getElementById('header-toggle-what');
 if ( headerToggleWhat ) {
-    const headerExpWhat = document.getElementById('header-exp-what');    
+    const headerExpWhat = document.getElementById('header-exp-what');
+    const headerWhatToggleSvg = document.getElementById('header-toggle-what-svg');
     headerToggleWhat.addEventListener('click', function() {        
         headerExpWhat.classList.toggle('explanation-open');
-        headerToggleWhat.classList.toggle('chevron-open');
+        headerWhatToggleSvg.classList.toggle('chevron-open');
+    });
+}
+const headerToggleHow = document.getElementById('header-toggle-how');
+if ( headerToggleHow ) {
+    const headerExpHow = document.getElementById('header-exp-how');
+    const headerHowToggleSvg = document.getElementById('header-toggle-how-svg');
+    headerToggleHow.addEventListener('click', function() {        
+        headerExpHow.classList.toggle('explanation-open');
+        headerHowToggleSvg.classList.toggle('chevron-open');
+    });
+}
+const headerToggleStack = document.getElementById('header-toggle-stack');
+if ( headerToggleStack ) {
+    const headerExpStack = document.getElementById('header-exp-stack');
+    const headerStackToggleSvg = document.getElementById('header-toggle-stack-svg');
+    headerToggleStack.addEventListener('click', function() {        
+        headerExpStack.classList.toggle('explanation-open');
+        headerStackToggleSvg.classList.toggle('chevron-open');
     });
 }
