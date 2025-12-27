@@ -87,6 +87,18 @@
                                     </p>
                                 </a>
                             </div>
+                            <div class="header-body-link">
+                                <a href="docs/api/v1">
+                                    <span>api</span>
+                                    <p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </p>
+                                </a>
+                            </div>
+
+                            
                         </div>                        
                         <div class="footer">
                             <a href="logout">Logout</a>
