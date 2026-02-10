@@ -190,7 +190,15 @@ if ( logoButton ) {
 const levelCallout = document.getElementById('level-callout');
 if ( levelCallout ) {
     levelCallout.addEventListener('click', (e) => {
-        if ( levelCallout.innerHTML == 'Level 7:' ) {
+        if ( levelCallout.innerHTML == 'Level 7:' || levelCallout.innerHTML == 'Level 6:' ) {
+            launchGifAcrossScreen('img/giphy.gif');
+        }
+    });
+}
+const levelCalloutHome = document.getElementById('level-callout-home');
+if ( levelCalloutHome ) {
+    levelCalloutHome.addEventListener('click', (e) => {
+        if ( levelCalloutHome.innerHTML == 'Level 7:' || levelCalloutHome.innerHTML == 'Level 6:' ) {
             launchGifAcrossScreen('img/giphy.gif');
         }
     });
@@ -248,4 +256,53 @@ function launchGifAcrossScreen(gifUrl) {
     }
 
     requestAnimationFrame(animate);
+}
+
+
+/* Mobile */
+const mobileNav = document.querySelector('.mobile-nav');
+const mobileOpen = document.getElementById('mobile-nav-open');
+if ( mobileOpen ) {
+    mobileOpen.addEventListener('click', function() {        
+        let isOpen = mobileNav.classList.contains('nav-open');
+        if ( isOpen ) {
+            //mobileNav.classList.remove('nav-open');
+        } else {
+            mobileNav.classList.add('nav-open');
+        }
+    });
+}
+const mobileClose = document.querySelector('#mobile-nav-close');
+if ( mobileClose ) {    
+    mobileClose.addEventListener('click', function() {
+        console.log('close click');
+        mobileNav.classList.remove('nav-open');
+    });
+}
+const headerToggleWhat = document.getElementById('header-toggle-what');
+if ( headerToggleWhat ) {
+    const headerExpWhat = document.getElementById('header-exp-what');
+    const headerWhatToggleSvg = document.getElementById('header-toggle-what-svg');
+    headerToggleWhat.addEventListener('click', function() {        
+        headerExpWhat.classList.toggle('explanation-open');
+        headerWhatToggleSvg.classList.toggle('chevron-open');
+    });
+}
+const headerToggleHow = document.getElementById('header-toggle-how');
+if ( headerToggleHow ) {
+    const headerExpHow = document.getElementById('header-exp-how');
+    const headerHowToggleSvg = document.getElementById('header-toggle-how-svg');
+    headerToggleHow.addEventListener('click', function() {        
+        headerExpHow.classList.toggle('explanation-open');
+        headerHowToggleSvg.classList.toggle('chevron-open');
+    });
+}
+const headerToggleStack = document.getElementById('header-toggle-stack');
+if ( headerToggleStack ) {
+    const headerExpStack = document.getElementById('header-exp-stack');
+    const headerStackToggleSvg = document.getElementById('header-toggle-stack-svg');
+    headerToggleStack.addEventListener('click', function() {        
+        headerExpStack.classList.toggle('explanation-open');
+        headerStackToggleSvg.classList.toggle('chevron-open');
+    });
 }

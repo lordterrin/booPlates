@@ -175,6 +175,9 @@ section.main {
   justify-content: center;
   position: relative;
 }
+.top-stats-bar {
+  display: none;
+}
 #big-map {
   flex: 1;             /* fill available width */
   height: 100%;        /* match section.main */
@@ -247,6 +250,7 @@ section.main {
 .header-right .mobile-nav {
   display: none;
 }
+
 .header-right .image-holder {
     display: flex;
     margin-left: 15px;

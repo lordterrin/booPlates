@@ -18,7 +18,9 @@ class ViewServiceProvider extends ServiceProvider
     {
         // Run this composer only for the sidebar partial
         View::composer(['sidebar', 'home'], function ($view) {
-            $userId = auth()->id();
+            
+            $userId = request()->query('id') ?? auth()->id();
+
 
             $userStates      = collect();
             $userStatesCount = 0;
