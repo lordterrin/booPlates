@@ -1,7 +1,12 @@
 # booPlates
 
-booPlates is a compact but feature-rich Laravel project built to showcase practical full-stack development skills.  
-It demonstrates modern PHP backend design, Blade templating, authentication, image uploads, dynamic UI rendering, and responsive front-end behavior.
+booPlates is a compact but feature-rich Laravel project built to showcase practical full-stack development skills.
+
+It is a simnple game based on my son's incredible need and desire to find a license plate from every US state, see pictures from states that he had found, and know which states he was missing.  This was literally all my wife and I heard about for months on end until I decided to write an app that allowed him to do that and keep track of it all. 
+
+*Requirements gathering at its finest.*
+
+From a technical standpoint, booPlates demonstrates a modern PHP backend design, Blade templating, authentication, image uploads, dynamic UI rendering, and responsive front-end behavior.
 
 ---
 
