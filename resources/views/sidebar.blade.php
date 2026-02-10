@@ -7,6 +7,11 @@
         <li>???</li>
         <li>Profit!</li>
     </ol>
+    <h1>Or: </h1>
+    <ul>
+        <li> See where you stand in the <a href="booBoards">booBoards</a> leaderboards</li>
+        <li> Want booData?  Check out our <a href="docs/api/v1">api</a> </li>
+    </ul>
 </div>
 <div class="sidebar-mid">
     

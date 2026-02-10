@@ -33,7 +33,6 @@ Route::get('/ping', function () {
 
 Route::prefix('v1')->group(function() {
 
-
     /* all v1 API routes live here */
     Route::get('/me', [MeController::class, 'show']);
 

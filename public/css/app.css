@@ -129,6 +129,11 @@ section.sidebar {
   flex-direction: column;
   padding-left: 15px;
 }
+.sidebar-top a {
+  color: #9b9be0;
+  text-decoration: none;
+  font-weight: 600;
+}
 section.sidebar ol {
   padding-right: 30px;
 }
@@ -237,7 +242,7 @@ section.main {
   color: white;
 }
 .header-right .google-login-button img {
-  height: 38px;
+  height: 28px;
 }
 .header-right .mobile-nav {
   display: none;
